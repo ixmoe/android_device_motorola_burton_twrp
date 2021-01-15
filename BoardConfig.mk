@@ -70,7 +70,6 @@ BOARD_KERNEL_CMDLINE := \
     swiotlb=1 \
     androidboot.usbcontroller=a600000.dwc3 \
     earlycon=msm_geni_serial,0x880000 \
-    loop.max_part=7 \
     printk.devkmsg=on \
     firmware_class.path=/vendor/firmware_mnt/image
 # For the love of all that is holy, please do not include this in your ROM unless you really want TWRP to not work correctly!
