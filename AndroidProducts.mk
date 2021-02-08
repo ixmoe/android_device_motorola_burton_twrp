@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_def.mk
+    $(LOCAL_DIR)/omni_burton.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_def-user \
-    omni_def-userdebug \
-    omni_def-eng
+    omni_burton-user \
+    omni_burton-userdebug \
+    omni_burton-eng

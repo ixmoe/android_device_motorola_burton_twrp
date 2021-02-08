@@ -1,33 +1,33 @@
-# TWRP Device configuration for Motorola One Hyper
+# TWRP Device configuration for Motorola Edge Plus
 
 ## Device specifications
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-CPU     | Octa-core (2x2.0 GHz Kryo 460 Gold & 6x1.7 GHz Kryo 460 Silver)
-CHIPSET | Qualcomm SM6150 Snapdragon 675
-GPU     | Adreno 620
-Memory  | 4GB
+CPU     | Octa-core (1x2.84 GHz Kryo 585 & 3x2.42 GHz Kryo 585 & 4x1.8 GHz Kryo 585)
+CHIPSET | Qualcomm SM8250 Snapdragon 865
+GPU     | Adreno 650
+Memory  | 8 / 12GB
 Shipped Android Version | 10
-Storage | 128GB
-Battery | 4000 mAh
-Dimensions | 161.8 x 76.6 x 8.9 mm
-Display | 1080 x 2340 pixels, 6.5" IPS LCD
-Rear Camera  | 64 MP (f/1.8) + 8 MP (f/2.2)
-Front Camera | 32 MP (f/2.0)
+Storage | 128 / 256GB
+Battery | 5000 mAh
+Dimensions | 161.1 x 71.4 x 9.6 mm
+Display | 1080 x 2340 pixels, 6.7" OLED
+Rear Camera  | 108 MP (f/1.8) + 8 MP (f/2.2) + 16MP (f/2.2)
+Front Camera | 25 MP (f/2.0)
 
-![Device Picture](https://fdn2.gsmarena.com/vv/pics/motorola/motorola-one-hyper-4.jpg)
+![Device Picture](https://fdn2.gsmarena.com/vv/pics/motorola/motorola-edge-plus-r3.jpg)
 
 ### Kernel Source
 
-
+Check here: https://github.com/ixmoe/android_kernel_motorola_sm8250
 
 ### How to compile
 
 ```sh
 . build/envsetup.sh
 export LC_ALL=C
-lunch omni_def-eng
+lunch omni_burton-eng
 make -j4 recoveryimage
 ```
 

@@ -23,16 +23,16 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-PLATFORM_PATH := device/motorola/def
+PLATFORM_PATH := device/motorola/burton
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := sm6150
+TARGET_BOOTLOADER_BOARD_NAME := kona
 TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
 # Platform
-TARGET_BOARD_PLATFORM := sm6150
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno610
+TARGET_BOARD_PLATFORM := kona
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno650
 TARGET_USES_64_BIT_BINDER := true
 TARGET_SUPPORTS_64_BIT_APPS := true
 BUILD_BROKEN_DUP_RULES := true
@@ -45,10 +45,10 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := kryo
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a73
+TARGET_2ND_CPU_VARIANT := cortex-a75
 
 # Enable CPUSets
 ENABLE_CPUSETS := true
@@ -60,6 +60,7 @@ BOARD_PROVIDES_GPTUTILS := true
 # Kernel
 BOARD_KERNEL_CMDLINE := \
     console=ttyMSM0,115200n8 \
+    earlycon=msm_geni_serial,0xa90000 \
     androidboot.hardware=qcom \
     androidboot.console=ttyMSM0 \
     androidboot.memcg=1 \
@@ -67,10 +68,10 @@ BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
     msm_rtb.filter=0x237 \
     service_locator.enable=1 \
-    swiotlb=1 \
     androidboot.usbcontroller=a600000.dwc3 \
-    earlycon=msm_geni_serial,0x880000 \
-    printk.devkmsg=on \
+    swiotlb=2048 \
+    cgroup.memory=nokmem,nosocket \
+    reboot=panic_warm \
     firmware_class.path=/vendor/firmware_mnt/image
 # For the love of all that is holy, please do not include this in your ROM unless you really want TWRP to not work correctly!
 BOARD_KERNEL_CMDLINE += androidboot.fastboot=1
@@ -87,8 +88,8 @@ BOARD_DTB_OFFSET           := 0x01f00000
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
-TARGET_KERNEL_SOURCE := kernel/motorola/sm6150
-TARGET_KERNEL_CONFIG := vendor/def_defconfig
+TARGET_KERNEL_SOURCE := kernel/motorola/sm8250
+TARGET_KERNEL_CONFIG := vendor/burton_defconfig
 
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC=$(shell pwd)/$(PLATFORM_PATH)/dtc/dtc
@@ -116,20 +117,20 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 # BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
 # Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
+BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 536870912
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 10737418240
+BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 949886976
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 241247563776
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 # Super
-BOARD_SUPER_PARTITION_SIZE := 8690597888
+BOARD_SUPER_PARTITION_SIZE := 12884901888
 BOARD_SUPER_PARTITION_GROUPS := motorola_dynamic_partitions
-BOARD_MOTOROLA_DYNAMIC_PARTITIONS_SIZE := 4341104640
+BOARD_MOTOROLA_DYNAMIC_PARTITIONS_SIZE := 6441926656
 BOARD_MOTOROLA_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     system \
     product \
