@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_racer.mk
+    $(LOCAL_DIR)/omni_burton.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_racer-user \
-    omni_racer-userdebug \
-    omni_racer-eng
+    omni_burton-user \
+    omni_burton-userdebug \
+    omni_burton-eng

@@ -19,7 +19,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # define hardware platform
-PRODUCT_PLATFORM := lito
+PRODUCT_PLATFORM := kona
 
 # A/B support
 AB_OTA_UPDATER := true
@@ -31,7 +31,6 @@ AB_OTA_PARTITIONS += \
     boot \
     dtbo \
     product \
-    recovery \
     system \
     vbmeta \
     vbmeta_system \
@@ -74,11 +73,6 @@ PRODUCT_HOST_PACKAGES += \
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# qcom standard decryption
-PRODUCT_PACKAGES += \
-    qcom_decrypt \
-    qcom_decrypt_fbe
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
