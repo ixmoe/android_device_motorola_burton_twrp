@@ -19,7 +19,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # define hardware platform
-PRODUCT_PLATFORM := sm6150
+PRODUCT_PLATFORM := kona
 
 # A/B support
 AB_OTA_UPDATER := true
@@ -34,6 +34,7 @@ AB_OTA_PARTITIONS += \
     recovery \
     system \
     vbmeta \
+    vbmeta_system \
     vendor
 
 PRODUCT_PACKAGES += \
