@@ -13,10 +13,12 @@ load()
     if [ ! -z "$is_fastboot_twrp" ]; then
         insmod /vendor/lib/modules/aw8697.ko
         insmod /vendor/lib/modules/goodix_v1430_mmi.ko
+        insmod /vendor/lib/modules/goodix_v1430_update_mmi.ko
         insmod /vendor/lib/modules/lcd.ko
         insmod /vendor/lib/modules/p938x_charger.ko
         insmod /vendor/lib/modules/qpnp-power-on-mmi.ko
         insmod /vendor/lib/modules/qpnp-smbcharger-mmi.ko
+        insmod /vendor/lib/modules/sec_mmi.ko
         insmod /vendor/lib/modules/sensors_class.ko
         insmod /vendor/lib/modules/synaptics_core_module.ko
         insmod /vendor/lib/modules/synaptics_device.ko
@@ -38,10 +40,12 @@ load()
         mkdir -p /vendor/lib/modules
         cp /v/lib/modules/aw8697.ko /vendor/lib/modules/aw8697.ko
         cp /v/lib/modules/goodix_v1430_mmi.ko /vendor/lib/modules/goodix_v1430_mmi.ko
+        cp /v/lib/modules/goodix_v1430_update_mmi.ko /vendor/lib/modules/goodix_v1430_update_mmi.ko
         cp /v/lib/modules/lcd.ko /vendor/lib/modules/lcd.ko
         cp /v/lib/modules/p938x_charger.ko /vendor/lib/modules/p938x_charger.ko
         cp /v/lib/modules/qpnp-power-on-mmi.ko /vendor/lib/modules/qpnp-power-on-mmi.ko
         cp /v/lib/modules/qpnp-smbcharger-mmi.ko /vendor/lib/modules/qpnp-smbcharger-mmi.ko
+        cp /v/lib/modules/sec_mmi.ko /vendor/lib/modules/sec_mmi.ko
         cp /v/lib/modules/sensors_class.ko /vendor/lib/modules/sensors_class.ko
         cp /v/lib/modules/synaptics_core_module.ko /vendor/lib/modules/synaptics_core_module.ko
         cp /v/lib/modules/synaptics_device.ko /vendor/lib/modules/synaptics_device.ko
@@ -54,10 +58,12 @@ load()
 
         insmod /vendor/lib/modules/aw8697.ko
         insmod /vendor/lib/modules/goodix_v1430_mmi.ko
+        insmod /vendor/lib/modules/goodix_v1430_update_mmi.ko
         insmod /vendor/lib/modules/lcd.ko
         insmod /vendor/lib/modules/p938x_charger.ko
         insmod /vendor/lib/modules/qpnp-power-on-mmi.ko
         insmod /vendor/lib/modules/qpnp-smbcharger-mmi.ko
+        insmod /vendor/lib/modules/sec_mmi.ko
         insmod /vendor/lib/modules/sensors_class.ko
         insmod /vendor/lib/modules/synaptics_core_module.ko
         insmod /vendor/lib/modules/synaptics_device.ko
